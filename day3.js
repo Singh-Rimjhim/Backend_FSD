@@ -82,21 +82,18 @@
 // console.log("5");
 //create promises that will print username and password using  and if username and password not found then it will call
 //reject and print ERROR.........
-new Promise((resolve, reject)=>{
-    setTimeout(function (){
-        console.log("this is promises ");
-        let err = true;
 
-        if(!err){
-            resolve("user:ABC, password: 1234");
-        }else{
-            reject("Error: Data failed");
-        }
-    }, 2000);
-})
-.then((data)=>{
-    console.log("Success:",data);
-})
-.catch((error)=>{
-    console.log(error);
-});
+async function test(){
+    console.log("message: 1");
+    const response= fetch("./student.json");
+    console.log(response.status);
+    const stdn=(await response).json();
+   return stdn;
+   console.log("message : 3");
+
+
+}
+test();
+console.log("message 2");
+
+//create json for 10 students

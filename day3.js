@@ -90,10 +90,8 @@ async function test(){
     const stdn=(await response).json();
    return stdn;
    console.log("message : 3");
-
-
 }
-test();
-console.log("message 2");
-
+test().then((res)=>{
+console.log(res);
+});
 //create json for 10 students
